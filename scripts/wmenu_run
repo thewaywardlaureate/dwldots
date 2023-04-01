@@ -1,0 +1,5 @@
+#!/bin/bash
+
+app=$(ls /usr/bin | wmenu)
+
+$app

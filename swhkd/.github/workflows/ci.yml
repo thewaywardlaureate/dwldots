@@ -1,0 +1,60 @@
+name: CI
+
+on: [push, pull_request]
+
+env:
+    CARGO_TERM_COLOR: always
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Build
+              run: cargo build --release
+
+    clippy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Clippy
+              run: cargo clippy
+
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Run tests
+              run: cargo test --verbose
+
+    documentation:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Check documentation
+              run: |
+                  sudo apt update
+                  sudo apt install --no-install-recommends scdoc
+                  for file in $(find . -type f -iwholename "./docs/*.scd"); do scdoc < $file > /dev/null; done
+    rustfmt:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Check formatting
+              run: |
+                  cargo fmt -- --check

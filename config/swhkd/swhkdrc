@@ -1,0 +1,46 @@
+/*APPLICATIONS*/
+
+super + b
+	librewolf
+Print
+	grim
+ctrl + Print
+  	grim -g "$(slurp)"
+
+ctrl + shift + f
+	rofi -show filebrowser
+
+
+/* Media */
+super + shift + v 
+	pactl -- set-sink-volume @DEFAULT_SINK@ -5% && $HOME/.scripts/volume.sh
+super + ctrl + v 
+	pactl -- set-sink-volume @DEFAULT_SINK@ +5% && $HOME/.scripts/volume.sh
+super + alt + shift + v
+	$HOME/.scripts/volume.sh
+super + ctrl + shift + v 
+	pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioNext
+	playerctl --all-players next
+XF86AudioPrev
+	playerctl --all-players previous
+XF86AudioPlay
+	playerctl --all-players play-pause
+XF86AudioStop
+	playerctl --all-players stop
+
+/* Brightness */
+
+super + alt + n
+	brightnessctl s 001% && xrandr --output eDP-1 --brightness 0.09
+super + alt + p 
+	brightnessctl s 100% && xrandr --output eDP-1 --brightness 1 
+super + alt + d 
+	brightnessctl s 002% && xrandr --output eDP-1 --brightness 0.1
+super + alt + v 
+	brightnessctl s 003% && xrandr --output eDP-1 --brightness 0.2
+/* XSECURELOCK */
+super + alt +ctrl + l 
+	env XSECURELOCK_FONT='ShureTechMono Nerd Font Mono:size=12' XSECURELOCK_SHOW_DATETIME=1 XSECURELOCK_PASSWORD_PROMPT='hidden' xsecurelock
+
+

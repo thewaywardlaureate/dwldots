@@ -1,0 +1,68 @@
+# Options
+ignore-empty-password
+
+# Style
+indicator-radius=120
+indicator-thickness=20
+line-uses-ring
+font="Shuretech Mono Nerd Font"
+font-size=32
+
+
+# Background
+# @Crust
+color=c7522a
+
+# Separator
+# @Surface0
+separator-color=74a892
+
+# Typing Password
+# @Blue
+key-hl-color=008585
+# @Lavender
+bs-hl-color=fbf2c4
+
+# Color Caps Lock Text
+# @Sapphire
+text-caps-lock-color=74c7ecff
+
+# Default Password
+# @Blue
+text-color=89b4fa3eff
+# @Base
+inside-color=1e1e2e1c
+# @Blue
+ring-color=89b4fa3e
+# @Crust
+line-color=11111b00
+
+# Clear Password
+# @Green
+text-clear-color=a6e3a1ff
+# @Base
+inside-clear-color=1e1e2e1c
+# @Green
+ring-clear-color=a6e3a13e
+# @Crust
+line-clear-color=11111b00
+
+# Verification Password
+# @Yellow
+text-ver-color=f9e2afff
+# @Base
+inside-ver-color=1e1e2e1c
+# @Yellow
+ring-ver-color=f9e2af3e
+# @Crust
+line-ver-color=11111b00
+
+# Wrong Password
+# @Red
+text-wrong-color=f38ba8ff
+# @Base
+inside-wrong-color=1e1e2e1c
+# @Red
+ring-wrong-color=f38ba855
+# @Crust
+line-wrong-color=11111b00
